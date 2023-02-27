@@ -53,9 +53,6 @@ class EmptyBaseModel(Base):  # type: ignore
 
     __abstract__ = True
 
-    def __str__(self):
-        return f"<{type(self).__name__}({self.id=})>"
-
     @classmethod
     def _get_query(cls: Type[TBase], prefetch: Optional[Tuple[str, ...]] = None) -> Any:
         query = sa.select(cls)

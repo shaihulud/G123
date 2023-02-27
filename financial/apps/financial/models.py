@@ -10,7 +10,6 @@ from financial.db import EmptyBaseModel
 class FinancialData(EmptyBaseModel):
     __tablename__ = "financial_data"
 
-    id = sa.Column(sa.Integer, primary_key=True)
     symbol = sa.Column(sa.String(settings.MAX_SYMBOL_LENGTH), nullable=False)
     date = sa.Column(sa.Date, nullable=False)
     # Use decimal because floats and doubles don't have an accurate enough representation
@@ -20,7 +19,7 @@ class FinancialData(EmptyBaseModel):
     volume = sa.Column(sa.BigInteger, nullable=False)
 
     # This pair must be unique through the DB. Also it helps to use Postgres ON CONFLICT statement.
-    __table_args__ = (sa.Index("ix_symbol_date", "symbol", "date", unique=True),)
+    __table_args__ = (sa.PrimaryKeyConstraint("symbol", "date"),)
 
     @classmethod
     async def count_stats(cls, session: AsyncSession, filters: Dict[str, Any]) -> dict:

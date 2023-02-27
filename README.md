@@ -29,6 +29,8 @@ All secrets MUST be stored securely and never present in GIT.
 On the local machine I use .env file that is added to .gitignore
 On dev / stage / stable / prod usually env variables are used. But also can be used .evn files for this.
 My implementation supports both variants.
+But here I'm commiting an ALPHAVANTAGE_APIKEY in dev.env to start a project just with docker-compose up
+not setting anything else. I understand that it should not be done in any other cases.
 
 ## Structure
 At the root of the short project are the following directories:

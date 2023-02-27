@@ -16,10 +16,13 @@ An interface for convenient access to the project API after the start is availab
 
 Every API endpoint has a description and is available without authorization.
 
-## Run linters
     docker-compose run app linters
 
 Runs code checkers: isort, black, pylint, mypy.
+
+    docker-compose run app get-raw-data
+
+Runs python get_raw_data.py to populate postgres database with fresh data from AlphaVantage.
 
 ## How to maintain the API key
 All secrets MUST be stored securely and never present in GIT.

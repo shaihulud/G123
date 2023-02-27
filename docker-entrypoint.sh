@@ -15,6 +15,10 @@ case "$1" in
         mypy .
         exit 0
         ;;
+    get-raw-data)
+        alembic upgrade head
+        python get_raw_data.py
+        ;;
     pytest)
         alembic downgrade base
         alembic upgrade head

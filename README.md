@@ -33,8 +33,8 @@ But here I'm commiting an ALPHAVANTAGE_APIKEY in dev.env to start a project just
 not setting anything else. I understand that it should not be done in any other cases.
 
 ## Structure
-At the root of the short project are the following directories:
-- financial - contains the Python code for the short link service.
+At the root of the financial project are the following directories:
+- financial - contains the Python code for the financial service.
 - migrations - contains migrations for the Postgres database with the necessary tables, indexes and system files.
 - tests - contains not as many tests as would be enough.
 - get_raw_data.py - Python script to parse AlphaVantage API and store parsed data to PostgreSQL database.
